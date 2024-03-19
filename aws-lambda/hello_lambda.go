@@ -4,13 +4,7 @@ import (
 	"log"
 
 	"github.com/aws/aws-lambda-go/events"
-	"github.com/aws/aws-lambda-go/lambda"
 )
-
-func main() {
-	// Your code here
-	lambda.Start(HandleRequest)
-}
 
 type Response struct {
 	Code    int    `json:"code"`
