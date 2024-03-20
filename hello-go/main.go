@@ -28,7 +28,7 @@ func dnsTest() {
 }
 
 func spfTest() {
-	domain := "mtarget.co"
+	domain := "masasdani.com"
 	spf, err := dns.ValidateSPFRecord(domain, "include:_spf.google.com")
 	fmt.Println(spf, err)
 }
