@@ -27,6 +27,7 @@ func GetSPFRecords(domain string) ([]string, error) {
 	return spfRecords, nil
 }
 
+// ValidateSPFRecord checks if a given SPF record is present in the SPF records for a domain
 func ValidateSPFRecord(domain string, record string) (bool, error) {
 	recs, err := GetSPFRecords(domain)
 	if err != nil {

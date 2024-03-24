@@ -9,6 +9,7 @@ import (
 func main() {
 	dnsTest()
 	spfTest()
+	dkimTest()
 }
 
 func dnsTest() {
@@ -31,4 +32,12 @@ func spfTest() {
 	domain := "masasdani.com"
 	spf, err := dns.ValidateSPFRecord(domain, "include:_spf.google.com")
 	fmt.Println(spf, err)
+}
+
+func dkimTest() {
+	domain := "masasdani.com"
+	selector := "mt1"
+	record := "dkim.mtarget.co"
+	dkim, err := dns.ValidateDKIMRecord(domain, selector, []string{record})
+	fmt.Println(dkim, err)
 }
