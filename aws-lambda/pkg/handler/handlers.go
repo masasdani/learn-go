@@ -1,9 +1,14 @@
 package handler
 
-import "github.com/aws/aws-lambda-go/events"
+import (
+	"log"
+
+	"github.com/aws/aws-lambda-go/events"
+)
 
 func DefaultHandler(event events.APIGatewayV2HTTPRequest) (*events.APIGatewayV2HTTPResponse, error) {
 	path := event.RequestContext.HTTP.Path
+	log.Printf("Request path: %s", path)
 	switch path {
 	case "/test":
 		return PingHandler(event)
